@@ -12,19 +12,19 @@ float video(int w, int h, int durationMovie, int durationCredits, int fps, char*
    // YOUR CODE HERE - BEGIN
       float colored_image_size=3*w*h*fps*durationMovie;
       float black_white_image_size=w*h*fps*durationCredits;
-      float video_size=colored_image_size+black_white_image_size;
+      float video_size=colored_image_size*8+black_white_image_size*1;
 
       if(strcmp(unit, "bt") == 0){
-      return video_size;
+      return video_size/8;
     }else if (strcmp(unit, "ko") == 0)
     {
-      return video_size/1024;
+      return (video_size/8)/1024;
     }else if (strcmp(unit, "mo") == 0)
     {
-      return (video_size/1024)/1024;
+      return ((video_size/8)/1024)/1024;
     }else if (strcmp(unit, "go") == 0)
     {
-      return ((video_size/1024)/1024)/1024;
+      return (((video_size/8)/1024)/1024)/1024;
     }else return video_size;
    // YOUR CODE HERE - END
    return 0;
